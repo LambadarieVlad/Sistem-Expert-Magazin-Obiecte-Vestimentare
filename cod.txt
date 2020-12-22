@@ -1,0 +1,107 @@
+sex_f(femei).
+sex_b(barbati).
+
+haine_femei(fuste, bluze, rochii, camasi, pulovere,tricouri, sacouri, salopete, pantaloni, jeans, jachete, paltoane).
+
+haine_sex_femei(A,B,C,D,E,F,G,H,I,J,K,L,M) :- haine_femei(A,B,C,D,E,F,G,H,I,J,K,L), sex_f(M),
+    write('Avem disponibile pentru ' + M +"urmatoarele articole: " + A + B + C + D + E + F + G + H + I + J + K + L).
+
+haine_barbati(bluze, camasi, sacouri, costume, pulovere, tricouri, veste, geci, pantaloni, jeans).
+
+haine_sex_barbati(A,B,C,D,E,F,G,H,I,J,K) :- haine_barbati(A,B,C,D,E,F,G,H,I,J), sex_b(K),
+    write('Avem disponibile pentru ' + K + "urmatoarele articole: " + A + B + C + D + E + F + G + H + I + J).
+
+culori_femei(rosu,verde,albastru,galben,roz,mov,portocaliu,gri,alb,negru).
+
+culori_haine_femei(A,B,C,D,E,F,G,H,I,J,K) :- culori_femei(A,B,C,D,E,F,G,H,I,J), sex_f(K),
+     write('Avem disponibile urmatoarele culori la hainele pentru ' + K + ":" + A + B + C + D + E + F + G + H + I +J).
+
+culori_barbati(verde, albastru, mov, gri, alb, negru, crem, cafeniu, kaki).
+
+culori_haine_barbati(A,B,C,D,E,F,G,H,I,J) :- culori_barbati(A,B,C,D,E,F,G,H,I), sex_b(J),
+     write('Avem disponibile urmatoarele culori la hainele pentru ' + J + ":" + A + B + C + D + E + F + G + H + I).
+
+masuri_femei(xs,s,m,l,xl).
+
+masuri_haine_femei(A,B,C,D,E,F) :- masuri_femei(A,B,C,D,E), sex_f(F),
+    write('Avem disponibile urmatoarele masuri la hainele pentru' + F + ":" + A + B + C + D + E).
+
+masuri_barbati(s,m,l,xl,xxl,xxxl).
+
+masuri_haine_barbati(A,B,C,D,E,F,G) :- masuri_barbati(A,B,C,D,E,F), sex_b(G),
+    write('Avem disponibile urmatoarele masuri la hainele pentru ' + G + ":" + A + B + C + D + E + F).
+
+sex(femei).
+sex(barbati).
+
+interogare_sex(A) :- sex(A),  write("Buna ziua! V-ar interesa haine pentru femei sau barbati? ").
+
+haine_f(fuste).
+haine_f(bluze).
+haine_f(rochii).
+haine_f(camasi).
+haine_f(pulovere).
+haine_f(tricouri).
+haine_f(sacouri).
+haine_f(salopete).
+haine_f(pantaloni).
+haine_f(jeans).
+haine_f(jachete).
+haine_f(paltoane).
+
+interogare_haine_femei(X)  :- haine_f(X),  write("Ce articol de imbracaminte v-ar interesa?").
+
+haine_b(bluze).
+haine_b(camasi).
+haine_b(sacouri).
+haine_b(costume).
+haine_b(pulovere).
+haine_b(tricouri).
+haine_b(veste).
+haine_b(geci).
+haine_b(pantaloni).
+haine_b(jeans).
+
+interogare_haine_barbati(Y)  :- haine_b(Y),  write("Ce articol de imbracaminte v-ar interesa?").
+
+marimi_f(xs).
+marimi_f(s).
+marimi_f(m).
+marimi_f(l).
+marimi_f(xl).
+
+interogare_marimi_femei(X) :- marimi_f(X), write("Ce marime de imbracaminte v-ar interesa?").
+
+marimi_b(s).
+marimi_b(m).
+marimi_b(l).
+marimi_b(xl).
+marimi_b(xxl).
+marimi_b(xxxl).
+
+interogare_marimi_barbati(Y) :- marimi_b(Y), write("Ce marime de imbracaminte v-ar interesa?").
+
+culori_f(rosu).
+culori_f(verde).
+culori_f(albastru).
+culori_f(galben).
+culori_f(roz).
+culori_f(mov).
+culori_f(portocaliu).
+culori_f(gri).
+culori_f(alb).
+culori_f(negru).
+
+interogare_culori_femei(X) :- culori_f(X), write("Ce culoare v ar interesa?" ).
+
+culori_b(verde).
+culori_b(albastru).
+culori_b(mov).
+culori_b(gri).
+culori_b(alb).
+culori_b(negru).
+culori_b(crem).
+culori_b(cafeniu).
+culori_b(kaki).
+
+interogare_culori_barbati(Y) :- culori_b(Y), write("Ce culoare v ar interesa?" ).
